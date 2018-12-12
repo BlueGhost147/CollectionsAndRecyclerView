@@ -26,6 +26,11 @@ class StudentAdapter: RecyclerView.Adapter<StudentViewHolder>() {
         val student = studentList[position]
         viewHolder.bindItem(student)
     }
+
+    fun updateList(newList: List<Student>) {
+        studentList = newList
+        notifyDataSetChanged()
+    }
 }
 
 class StudentViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
