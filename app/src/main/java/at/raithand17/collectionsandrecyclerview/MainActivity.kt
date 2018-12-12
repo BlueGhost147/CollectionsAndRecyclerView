@@ -130,7 +130,7 @@ class MainActivity : AppCompatActivity() {
         )
 
         // Add the List to the mutable Map
-        studentMapMutable.put("IMA16",ima16List)
+        studentMapMutable.set("IMA16",ima16List)
 
         // Log the values same as for the Map.
         logMap("studentMapM",studentMapMutable)
