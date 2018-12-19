@@ -1,6 +1,10 @@
 package beans
 
-class Student(val name: String, val currentSemester: Int) {
+import android.arch.persistence.room.Entity
+import android.arch.persistence.room.PrimaryKey
+
+@Entity
+class Student(@PrimaryKey val name: String, val currentSemester: Int) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false

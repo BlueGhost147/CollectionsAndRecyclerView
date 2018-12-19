@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import at.raithand17.collectionsandrecyclerview.R
 import beans.Student
@@ -27,7 +28,11 @@ class StudentAdapter: RecyclerView.Adapter<StudentViewHolder>() {
         viewHolder.bindItem(student)
     }
 
-    fun updateList(newList: List<Student>) {
+    fun updateList() {
+        notifyDataSetChanged()
+    }
+
+    fun newList(newList: List<Student>) {
         studentList = newList
         notifyDataSetChanged()
     }
@@ -35,6 +40,7 @@ class StudentAdapter: RecyclerView.Adapter<StudentViewHolder>() {
 
 class StudentViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
     fun bindItem(student: Student) {
-        itemView.findViewById<TextView>(R.id.student_name).text = student.name
+        itemView.findViewById<TextView>(R.id.student_name).text = student.toString()
+
     }
 }
